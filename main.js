@@ -32,9 +32,12 @@ function createWindow () {
     width: 1000,
     height: 700,
     webPreferences: {
-      nodeIntegration: true
+       allowRunningInsecureContent: true,
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
     },
-    icon: 'assets/solokeys-32x32.png',
+    icon: "assets/solokeys-32x32.png",
     show: false,
   });
 
