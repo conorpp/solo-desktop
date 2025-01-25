@@ -33,7 +33,7 @@ gulp.task('js', () => { // 3.
 gulp.task('build', gulp.series('copy', 'html', 'css', 'js'));
 gulp.task('start', gulp.series('build', () => {
     var p = exec(
-        __dirname+'/node_modules/.bin/electron .'
+        __dirname+'/node_modules/.bin/electron '
     ).on('close', () => process.exit());
     p.stdout.pipe(process.stdout);
     p.stderr.pipe(process.stderr);
@@ -53,7 +53,7 @@ gulp.task('default', gulp.parallel('start', 'watch'));
 
 gulp.task('release', gulp.series('build', () => {
     var p = exec(
-        __dirname+'/node_modules/.bin/electron-builder .'
+        __dirname+'/node_modules/.bin/electron-builder'
     ).on('close', () => process.exit());
     p.stdout.pipe(process.stdout);
     p.stderr.pipe(process.stderr);

@@ -12,7 +12,8 @@ require('./routes');
 import url from 'url';
 require('./hid');
 
-const isDev = require('electron-is-dev');
+const isDev = true
+
 
 if (isDev) {
 	console.log('Running in development');
