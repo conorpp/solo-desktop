@@ -12,7 +12,8 @@ require('./routes');
 import url from 'url';
 require('./hid');
 
-const isDev = require('electron-is-dev');
+const isDev = true
+
 
 if (isDev) {
 	console.log('Running in development');
@@ -32,9 +33,12 @@ function createWindow () {
     width: 1000,
     height: 700,
     webPreferences: {
-      nodeIntegration: true
+       allowRunningInsecureContent: true,
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
     },
-    icon: 'assets/solokeys-32x32.png',
+    icon: "assets/solokeys-32x32.png",
     show: false,
   });
 
